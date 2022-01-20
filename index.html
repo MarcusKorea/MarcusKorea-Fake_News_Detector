@@ -96,11 +96,11 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       </div>
       <br>
       <div>
-        <button type="submit" class="w3-button w3-block w3-black" style="align-items: center; font-size: x-large;">GO</button>
+        <button type="submit" action="{{ url_for('index') }}" method="POST" class="w3-button w3-block w3-black" style="align-items: center; font-size: x-large;">GO</button>
       </div>
       <div>
-        <span class="stamp is-fake">Fake</span>
-        <span class="stamp is-true">True</span>
+        <span class="stamp is-fake result=1">Fake</span>
+        <span class="stamp is-true result=0">True</span>
       </div>
   </div>
 
