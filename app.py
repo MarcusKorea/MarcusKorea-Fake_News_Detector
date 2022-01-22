@@ -1,13 +1,13 @@
 # Import the required libraries
 from flask import Flask, render_template, redirect, request
-from joblib import load
+#from joblib import load
 import pickle
 
 # Load the pipeline object
-#vectorizor = load("vectorizor.joblib")
-#model = load("logistic_Regression_Model.joblib")
+vectorizor = load("vectorizor.joblib")
+model = load("logistic_Regression_Model.joblib")
 
-#Loading Naive Bayes model
+#Loading vectoriser
 vectorizor = pickle.load(open("vect.pkl", 'rb'))
 model = pickle.load(open("model.pkl", 'rb'))
 
@@ -33,13 +33,13 @@ def predict():
     print("hohohohohoho")
     if request.method == 'POST':
         message = [str(x) for x in request.form.values()][0]
-        #data = [message]
-        print(message)
+        data = [message]
+        #print(message)
         print("***************************")
-        vect = vectorizor.transform(['hello my name is Ivana','nice to meet you']).toarray()
+        vect = vectorizor.transform(data).toarray()
         print(vect.shape)
-        prediction = model.predict([vect])
-        print(prediction)
+        prediction = model.predict(vect)
+        print("**************PREDICTION***************",prediction)
     return render_template('index.html')
 
 # main

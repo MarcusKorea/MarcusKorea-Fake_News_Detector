@@ -84,23 +84,16 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
   <div class="input-panel">
       <div class="w3-section" style="margin-left: 10;">
-        <label style="font-size: 16pt;">Input the article title</label>
-        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Title" required>
-      </div>
-      <div>
-        <label style="font-style: italic; font-size: 18pt;">OR</label>
-      </div>
-      <div class="w3-section" style="margin-left: 10;">
-        <label style="font-size: 16pt;">Input the article body text</label>
+        <label style="font-size: 16pt;">Input the article title or body text</label>
         <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Contents" required>
-      </div>
-      <br>
-      <div>
-        <button type="submit" action="{{ url_for('index') }}" method="POST" class="w3-button w3-block w3-black" style="align-items: center; font-size: x-large;">GO</button>
       </div>
       <div>
         <span class="stamp is-fake result=1">Fake</span>
         <span class="stamp is-true result=0">True</span>
+      </div>
+      <br>
+      <div>
+        <button type="submit" action="{{ url_for('index') }}" method="POST" class="w3-button w3-block w3-black" style="align-items: center; font-size: x-large;">GO</button>
       </div>
   </div>
 
@@ -141,6 +134,41 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
         <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
         <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
         <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Grid -->
+  <div class="w3-row-padding" id="behind">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Behind The Scenes</span>
+    </div>
+    <h3>Pre-Processing Steps</h3>
+    <p style="font-size: 14pt;">Three raw data sets were sourced from Kaggle.com as CSV files, combined, then cleaned and prepared in Jupyter Notebook. The following steps were taken:</p>
+    <ul style="font-size: 14pt;">
+      <li>Removed duplicate rows</li>
+      <li>Removed rows with blank cells</li>
+      <li>Removed articles with title lengths less than 3 words?</li>
+      <li>Removed articles with body lengths less than 50 words?</li>
+      <li>Removed new line characters</li>
+      <li>Removed all non ascii characters</li>
+      <li>Changed target variable (real/fake) to binary (0/1)</li>
+    </ul>
+    <h3>Machine Learning Model Development</h3>
+    <p style="font-size: 14pt;">A logistic regression model was created using python and sklearn to predict whether text from a news article was real or fake news. These were the steps:</p>
+    <ul style="font-size: 14pt;">
+      <li>Removed stop words</li>
+      <li>Removed punctuation</li>
+      <li>Split data into train and test (80/20)</li>
+      <li>Apply TF-IDF Vectoriser, fit and transform to dataset</li>
+      <li>Create a logistic regression classifier and fit to dataset</li>
+      <li>Used pickle to export data for access by Flask app</li>
+    </ul>
+    <div>
+      <h3>Project Workflow</h3>
+      <p style="font-size: 14pt;">The following diagram represents the project workflow.</p>
+      <div>
+        <img src="Figures\Project Workflow.PNG" alt="workflow" style="width:100%">
       </div>
     </div>
   </div>
