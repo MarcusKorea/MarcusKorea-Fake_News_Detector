@@ -26,6 +26,7 @@ et-xmlfile==1.1.0
 Flask==2.0.2
 fonttools==4.25.0
 greenlet @ file:///opt/concourse/worker/volumes/live/b27b4e9e-4697-4d57-403b-f82d36a391ca/volume/greenlet_1628888146890/work
+gunicorn==20.1.0
 idna @ file:///tmp/build/80754af9/idna_1637925883363/work
 importlib-metadata @ file:///opt/concourse/worker/volumes/live/deb4b040-5d3d-417b-6177-7bbc888e23de/volume/importlib-metadata_1638542901294/work
 ipykernel @ file:///opt/concourse/worker/volumes/live/6f6caad4-5c02-4b4a-5243-1eece346c27b/volume/ipykernel_1633545433252/work/dist/ipykernel-6.4.1-py3-none-any.whl
