@@ -1,15 +1,46 @@
 # Import the required libraries
 from flask import Flask, render_template, redirect, request
-#from joblib import load
+import spacy
+import nltk
+from nltk.tokenize import word_tokenize
+import string
 import pickle
 
-# Load the pipeline object
-vectorizor = load("vectorizor.joblib")
-model = load("logistic_Regression_Model.joblib")
-
 #Loading vectoriser
-vectorizor = pickle.load(open("vect.pkl", 'rb'))
-model = pickle.load(open("model.pkl", 'rb'))
+vectorizor = pickle.load( open("Model_files/Vectorisors/log_reg_vec.pkl","rb"))
+model = pickle.load(open("Model_files/Models/log_reg_model.pkl", 'rb'))
+
+
+# define some user functions
+# remove non ascii characters
+def remove_non_ascii(word):
+    new_word = word.encode("ascii","ignore").decode()
+    return new_word
+    # remove punctuation and stop words
+def clean_input(input):
+    # load language model
+    sp = spacy.load('en_core_web_sm')
+    # import stop words
+    all_stopwords = sp.Defaults.stop_words
+    # import puncuation
+    punc  = string.punctuation
+
+    # replace any weird characters
+    text = input
+    remove_non_ascii(text)
+
+    # remove puncuation
+    new_text = text.translate(str.maketrans('', '', punc))
+
+    # tokenize and make everything lower case
+    text_tokens = word_tokenize(new_text.lower())
+
+    # remove stop words
+    tokens_without_sw= [word for word in text_tokens if not word in all_stopwords]
+
+    # make list a string again
+    tokens_without_sw = " ".join(tokens_without_sw)
+    return tokens_without_sw
 
 # Start Flask
 app =Flask(__name__)
@@ -17,31 +48,33 @@ app =Flask(__name__)
 # home page
 @app.route("/",  methods=["GET","POST"])
 def index():
+    print("in index)")
+    print( request.method)
     if request.method == "GET":
-        return(render_template("index.html"))
+        return render_template("fk_index.html")
+
 
     if request.method == "POST":
         article = request.form["Contents"]
-        print(article)
-
-        #prediction = pipeline.predict(article)[0]
-
-    return render_template("index.html")
+        return render_template("fk_index.html")
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    print("hohohohohoho")
+    print("in predict")
     if request.method == 'POST':
         message = [str(x) for x in request.form.values()][0]
+        # removes stop word, punctuation and non ascci characters from entered line
+        message = clean_input(message)
         data = [message]
-        #print(message)
-        print("***************************")
+
+        # feeds entered line into the model
         vect = vectorizor.transform(data).toarray()
-        print(vect.shape)
-        prediction = model.predict(vect)
-        print("**************PREDICTION***************",prediction)
-    return render_template('index.html')
+
+        # stroes predicted value
+        prediction = model.predict(vect)[0]
+    return render_template("fk_index.html",outcome = prediction)
+
 
 # main
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug = True, port = 3000)
