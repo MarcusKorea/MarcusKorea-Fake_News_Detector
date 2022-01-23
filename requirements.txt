@@ -1,26 +1,13 @@
-anyio @ file:///opt/concourse/worker/volumes/live/96440bbe-d2f1-4a9e-5edf-600248ff38bd/volume/anyio_1617783321037/work/dist
-appnope @ file:///opt/concourse/worker/volumes/live/6ca6f098-d773-4461-5c91-a24a17435bda/volume/appnope_1606859448531/work
-argon2-cffi @ file:///opt/concourse/worker/volumes/live/38e8fb2b-1295-4bdf-4adf-b20acbe4d91b/volume/argon2-cffi_1607022498041/work
-async-generator @ file:///home/ktietz/src/ci/async_generator_1611927993394/work
-attrs @ file:///tmp/build/80754af9/attrs_1620827162558/work
-Babel @ file:///tmp/build/80754af9/babel_1620871417480/work
-backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
-bleach @ file:///opt/conda/conda-bld/bleach_1641577558959/work
+anyio==3.5.0
+appnope==0.1.2
+Babel==2.9.1
 blis==0.7.5
-Bottleneck @ file:///opt/concourse/worker/volumes/live/ac8c8ef3-2ed0-42e9-6ec0-5bb05ad938f6/volume/bottleneck_1607575111469/work
-brotlipy==0.7.0
 catalogue==2.0.6
 certifi==2021.10.8
-cffi @ file:///opt/concourse/worker/volumes/live/976f8942-f51d-4f0e-7352-2a10f0820d0e/volume/cffi_1625814703974/work
-charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+charset-normalizer==2.0.10
 click==8.0.3
-cryptography @ file:///opt/concourse/worker/volumes/live/a9ca20dd-e1fe-4ed3-754e-0db64082a5d2/volume/cryptography_1639414576087/work
-cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
+cycler==0.11.0
 cymem==2.0.6
-debugpy @ file:///opt/concourse/worker/volumes/live/fb0af3c0-b0a4-42c5-46e7-6ce9c84da602/volume/debugpy_1637091827531/work
-decorator @ file:///tmp/build/80754af9/decorator_1632776554403/work
-defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.2.0/en_core_web_sm-3.2.0-py3-none-any.whl
 entrypoints==0.3
 et-xmlfile==1.1.0
 Flask==2.0.2
@@ -84,6 +71,7 @@ pydantic==1.8.2
 Pygments @ file:///tmp/build/80754af9/pygments_1629234116488/work
 pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1635333100036/work
 pyparsing @ file:///tmp/build/80754af9/pyparsing_1635766073266/work
+pypi==2.1
 pyrsistent @ file:///opt/concourse/worker/volumes/live/76cffa60-bd33-4155-4e83-ea03c38b1294/volume/pyrsistent_1636111020441/work
 PySocks @ file:///opt/concourse/worker/volumes/live/112288ac-9cb0-4e73-768b-13baf4ca6419/volume/pysocks_1605305820043/work
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
