@@ -5,6 +5,8 @@ import nltk
 from nltk.tokenize import word_tokenize
 import string
 import pickle
+import os
+port = int(os.environ.get("PORT", 5000))
 
 #Loading vectoriser
 vectorizor = pickle.load( open("Model_files/Vectorisors/log_reg_vec.pkl","rb"))
@@ -77,4 +79,4 @@ def predict():
 
 # main
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(host = '0.0.0.0', port =port, debug = True)
