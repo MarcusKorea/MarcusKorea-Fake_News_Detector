@@ -38,25 +38,19 @@ To get a prediction enter an article title or paragraph(s) in the input box and 
 
 ## **Analysis**
 ![Data percentage](Screenshots/tableau1.png)
-![Body/Title Length](Screenshots/tableau2.png)
-![Data percentage](Screenshots/tableau3.png)
+![Average Body/Title Length](Screenshots/tableau2.png)
+![Title Length](Screenshots/tableau3.png)
+![Top 10 words in real and fake articles](Screenshots/tableau4.png)
+![Top 20 contributing  words in real and fake articles](Screenshots/tableau5.png)
 
 
 ## **Running the jupyter notebooks**
-1. Before running any of the jupyter notebooks please install needed packages running the following code in the terminal.
-         
-        pip install pandas
-        pip install sqlalchemy
-        pip install geopandas
-        pip install Flask-sqlalchemy
-        pip install matplotlib
-Or run this code in the first Jupyter Notebook
+1. Before running any of the jupyter notebooks please install the needed packages by running the following code in the terminal.
 
-        ! pip install --user pandas
-        ! pip install --user sqlalchemy
-        ! pip install --user geopandas
-        ! pip install --user Flask-sqlalchemy
-2. Run the file *DataCleaning.ipynb* 
+        pip instal -r notebook_requirements.txt
 
+2. Run the file *data_cleaning.ipynb* 
 
-3. Run the file *Conclusions.ipynb* 
+3. Run the file *logistic_reg_model_create.ipynb* 
+
+4. Run the file *PA_model_create.ipynb*
