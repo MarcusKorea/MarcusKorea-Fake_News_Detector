@@ -27,6 +27,31 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   mix-blend-mode: multiply;
   margin-left: 45%;
   margin-top: 20px;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  animation-delay:2.5s;
+  -webkit-animation-delay:2.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  opacity: 0;
+  -webkit-animation-fill-mode:forwards;
+   animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes pulse{
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity:.50;
+    transform-origin: 50% 50%;
+    transform: rotate(-2deg) scale(5);
+    transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  100%{
+    opacity:1;
+    transform: rotate(-15deg) scale(1);
+  }
 }
 
 .is-fake {
@@ -71,7 +96,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   </div>
 
   <div>
-      <p style="font-size: 14pt; color: red;">'Fake news' is false or misleading information presented under the guise of factual information. 
+      <p style="font-size: 14pt;">'Fake news' is false or misleading information presented under the guise of factual information. 
           It is often produced to damage a person's or entity's reputation or for the author's financial gain.
         Fake news, having the propensity of being more emotive and thus resulting in more clicks, often displaces real news 
         as a result of social media algorithms. The proliferation of fake news online is a serious concern as it has a significant
