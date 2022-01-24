@@ -1,7 +1,3 @@
-
-.DS_Store
-.DS_Store
-.DS_Store
 Data/contribution_top20_fake.csv
 Data/contribution_top20_words_real.csv
 Data/fake_top10_meaningful_words_freq.csv
@@ -15,5 +11,4 @@ Data/testing_data.csv
 Data/testing_data.xlsx
 Data/word_freq_fake.csv
 Data/word_freq_real.csv
-.DS_Store
 .DS_Store
