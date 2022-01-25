@@ -1,5 +1,7 @@
 # Fake News Detector
 ## [**Click here to view the app**](https://detect-fake-news-app.herokuapp.com)
+
+## This assumes you have Python/Jupyter Notebook installed and a way to create new Python environments
 ## Project Dcescription
 The goal of this project is to create a model using machine learning that can determine whether an article is fake news or not. To interact with this model, a web page will be created that will allow a user to enter a article title/paragraph/URL and have the model determine whether that specific article is fake news or real news. An analysis will also be conducted to see what the characteristics of a fake news article are and compare to the characteristic of real news article and help make fake news more identifiable.
 
@@ -44,11 +46,21 @@ To get a prediction enter an article title or paragraph(s) in the input box and 
 ![Top 10 words in real and fake articles](Screenshots/tableau4.png)
 ![Top 20 contributing  words in real and fake articles](Screenshots/tableau5.png)
 
+## **Running the app locally**
+1. Before running any files create a new python environment
+2. Run the following code in the terminal 
+       
+        pip install -r requirements.txt
+        
+3. Set you directory to where you cloned the repo
+4. Run the following code in the terminal
+        python app.py
+5. In a web browser of your choosing, [click here](http://10.0.0.1:5000/), or enter this as the URL http://10.0.0.1:5000/
 
 ## **Running the jupyter notebooks**
 1. Before running any of the jupyter notebooks please install the needed packages by running the following code in the terminal.
 
-        pip instal -r notebook_requirements.txt
+        pip install -r notebook_requirements.txt
 
 2. Run the file *data_cleaning.ipynb* 
 
