@@ -54,7 +54,9 @@ To get a prediction enter an article title or paragraph(s) in the input box and 
         
 3. Set you directory to where you cloned the repo
 4. Run the following code in the terminal
+        
         python app.py
+
 5. In a web browser of your choosing, [click here](http://10.0.0.1:5000/), or enter this as the URL http://10.0.0.1:5000/
 
 ## **Running the jupyter notebooks**
