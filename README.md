@@ -12,7 +12,8 @@ To get a prediction enter an article title or paragraph(s) in the input box and 
 ## **Tools used**:
 - Python (for data pre-processing and model creation)
 - HTML (app Design)
-- CSS
+- CSS (app styling)
+- Tableau (to make the graphs)
 - Heroku (for deploying the app)
 
 
