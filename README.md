@@ -1,5 +1,5 @@
 # Fake News Detector
-## **View the app here: https://detect-fake-news-app.herokuapp.com
+## **View the app here:** https://detect-fake-news-app.herokuapp.com
 
 ## This assumes you have Python/Jupyter Notebook installed and a way to create new Python environments
 ## Project Dcescription
